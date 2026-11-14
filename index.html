@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#391b34">
+  <meta name="description" content="Kejutan kecil dan surat ulang tahun untuk Ade.">
+  <title>Hari Spesial Ade ✦</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --plum: #391b34;
+      --plum-soft: #68435e;
+      --rose: #ce7184;
+      --rose-light: #f6dce0;
+      --cream: #fff9ef;
+      --gold: #efc776;
+      --muted: #927d88;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--plum);
+      background: var(--cream);
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { min-width: 320px; scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(ellipse at 50% 0, #f8e6e2 0, transparent 48%),
+        var(--cream);
+    }
+    button, a { font: inherit; }
+    button:focus-visible, a:focus-visible, [role="button"]:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 5px;
+    }
+    .page {
+      position: relative;
+      width: min(100% - 40px, 1060px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 28px 0 42px;
+    }
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .brand {
+      color: var(--plum);
+      font-family: Georgia, serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -.04em;
+      text-transform: none;
+    }
+    .brand span { color: var(--rose); }
+    .scene {
+      width: min(100%, 790px);
+      margin: 54px auto 0;
+      text-align: center;
+    }
+    .eyebrow {
+      margin: 0 0 13px;
+      color: #a56c7c;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, .memory-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 8vw, 76px);
+      letter-spacing: -.055em;
+      line-height: 1.06;
+    }
+    h1 em, h2 em { color: var(--rose); font-weight: 500; }
+    .intro-copy {
+      max-width: 440px;
+      margin: 17px auto 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .cake-button {
+      display: grid;
+      justify-items: center;
+      gap: 14px;
+      margin: 32px auto 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--plum);
+      cursor: pointer;
+    }
+    .cake-button:hover .cake { transform: translateY(-7px) scale(1.025); }
+    .cake-button:hover .cake-plate { box-shadow: 0 13px 0 #e7c7bb, 0 21px 30px #673c4920; }
+    .cake-art {
+      position: relative;
+      display: block;
+      width: 250px;
+      height: 224px;
+      filter: drop-shadow(0 18px 22px #643c4918);
+    }
+    .cake {
+      position: absolute;
+      inset: 30px 0 auto;
+      height: 174px;
+      transition: transform .3s ease;
+    }
+    .cake-plate {
+      position: absolute;
+      right: 7px;
+      bottom: 1px;
+      left: 7px;
+      height: 22px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background: #fffaf3;
+      box-shadow: 0 10px 0 #e7c7bb, 0 18px 25px #673c4916;
+      transition: box-shadow .3s ease;
+    }
+    .cake-bottom {
+      position: absolute;
+      right: 30px;
+      bottom: 23px;
+      left: 30px;
+      height: 73px;
+      border: 6px solid #fff3e5;
+      border-top: 10px solid #ffe7d7;
+      border-radius: 13px 13px 20px 20px;
+      background: linear-gradient(90deg, #c86678, #db8690 50%, #be5e76);
+      box-shadow: inset 0 -12px 0 #b65770;
+    }
+    .cake-top {
+      position: absolute;
+      z-index: 1;
+      right: 48px;
+      bottom: 87px;
+      left: 48px;
+      height: 53px;
+      border-radius: 50% 50% 8px 8px / 28% 28% 8px 8px;
+      background: #f1c7b1;
+      box-shadow: inset 0 8px 0 #fff0dc;
+    }
+    .drip {
+      position: absolute;
+      top: 5px;
+      width: 13px;
+      height: 21px;
+      border-radius: 0 0 9px 9px;
+      background: #fff0dc;
+    }
+    .drip-one { left: 26px; height: 26px; }
+    .drip-two { left: 67px; height: 18px; }
+    .drip-three { right: 22px; height: 24px; }
+    .berry {
+      position: absolute;
+      z-index: 2;
+      top: -18px;
+      width: 13px;
+      height: 15px;
+      border-radius: 70% 70% 55% 55%;
+      background: #873e5c;
+    }
+    .berry-one { left: 24px; }
+    .berry-two { left: 70px; top: -23px; }
+    .berry-three { right: 20px; }
+    .berry::after {
+      position: absolute;
+      top: -4px;
+      left: 5px;
+      width: 4px;
+      height: 7px;
+      transform: rotate(28deg);
+      background: #7a8a62;
+      content: "";
+    }
+    .candle {
+      position: absolute;
+      z-index: 3;
+      bottom: 135px;
+      left: 50%;
+      width: 15px;
+      height: 58px;
+      transform: translateX(-50%);
+      border-radius: 5px 5px 2px 2px;
+      background: repeating-linear-gradient(135deg, #fff8ed 0 8px, #d67b82 8px 13px);
+      box-shadow: 0 0 0 2px #fff8ed;
+    }
+    .flame {
+      position: absolute;
+      top: -23px;
+      left: 2px;
+      width: 12px;
+      height: 21px;
+      transform-origin: 50% 100%;
+      border-radius: 60% 40% 60% 45%;
+      background: #f4bc5c;
+      box-shadow: 0 0 20px 7px #f4bc5c66;
+      animation: flicker 1.2s ease-in-out infinite alternate;
+    }
+    .cake-sparkle {
+      position: absolute;
+      color: #bd8a46;
+      font-size: 23px;
+      animation: twinkle 2s ease-in-out infinite;
+    }
+    .sparkle-left { top: 55px; left: 7px; }
+    .sparkle-right { top: 79px; right: 4px; animation-delay: .6s; }
+    .cake-prompt {
+      color: #96687a;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .envelope-stage {
+      width: min(100%, 590px);
+      margin: 52px auto 0;
+      animation: appear .7s ease both;
+    }
+    .envelope-stage h2 {
+      margin: 0 0 9px;
+      font-size: clamp(30px, 5vw, 45px);
+    }
+    .envelope-stage > p {
+      margin-bottom: 27px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .envelope {
+      position: relative;
+      display: block;
+      width: min(100%, 420px);
+      height: 258px;
+      margin: 0 auto;
+      cursor: pointer;
+      filter: drop-shadow(0 18px 18px #673c4920);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .envelope-body {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border: 1px solid #fff;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #edb4b1, #d7788a);
+    }
+    .envelope-body::before, .envelope-body::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(35deg, transparent 49.5%, #fff8 50%, transparent 50.6%);
+      content: "";
+    }
+    .envelope-body::after {
+      background: linear-gradient(-35deg, transparent 49.5%, #ffffffa8 50%, transparent 50.6%);
+    }
+    .envelope-flap {
+      position: absolute;
+      z-index: 3;
+      inset: 0 0 auto;
+      height: 100%;
+      transform-origin: top center;
+      clip-path: polygon(0 0, 100% 0, 50% 60%);
+      border-radius: 18px 18px 0 0;
+      background: linear-gradient(135deg, #f2c6bb, #df8d97);
+      transition: transform .75s ease, z-index .01s linear .38s;
+    }
+    .envelope-flap::after {
+      position: absolute;
+      top: 27%;
+      left: 50%;
+      color: #fff7ec;
+      font-size: 31px;
+      text-shadow: 0 2px 8px #723e572e;
+      content: "♡";
+      transform: translate(-50%, -50%);
+    }
+    .letter {
+      position: absolute;
+      z-index: 2;
+      right: 9%;
+      bottom: 16px;
+      left: 9%;
+      min-height: 203px;
+      padding: 24px 23px 19px;
+      transform: translateY(28px);
+      border: 1px solid #f0dfd5;
+      border-top: 5px solid #e8b0ad;
+      border-radius: 12px;
+      background: #fffdf7;
+      box-shadow: 0 10px 24px #59304718;
+      opacity: 0;
+      text-align: left;
+      transition: opacity .55s ease .18s, transform .65s ease .18s;
+    }
+    .letter p {
+      margin: 5px 0 10px;
+      color: #725d69;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .letter strong { color: #a7536b; }
+    .envelope.open .envelope-flap {
+      z-index: 1;
+      transform: rotateX(180deg);
+    }
+    .envelope.open .letter {
+      transform: translateY(-29px);
+      opacity: 1;
+    }
+    .envelope-hint {
+      margin: 18px 0 0;
+      color: #a26d7d;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .action-button {
+      min-height: 46px;
+      margin-top: 23px;
+      padding: 0 23px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--plum);
+      box-shadow: 0 9px 22px #391b3425;
+      color: white;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .action-button:hover { transform: translateY(-2px); background: #57364f; }
+    .story {
+      width: min(100%, 760px);
+      margin: 74px auto 0;
+      padding: 32px;
+      border: 1px solid #f0e2df;
+      border-radius: 22px;
+      background: #fffdf8;
+      box-shadow: 0 18px 50px #5836470d;
+      text-align: left;
+      animation: appear .6s ease both;
+    }
+    .story-heading { margin-bottom: 23px; text-align: center; }
+    .story-heading h2 {
+      margin: 0;
+      font-size: clamp(29px, 5vw, 42px);
+    }
+    .story-nav {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      margin-bottom: 22px;
+    }
+    .tab {
+      min-height: 40px;
+      padding: 0 18px;
+      border: 1px solid #ead4d9;
+      border-radius: 999px;
+      background: #fff;
+      color: #815d70;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .tab.active { border-color: var(--plum); background: var(--plum); color: #fff; }
+    .panel { display: none; }
+    .panel.active { display: block; animation: appear .35s ease both; }
+    .memory-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+    .memory-card {
+      min-height: 152px;
+      padding: 20px;
+      border: 1px solid #efe2dd;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #fffaf5, #fff3f1);
+    }
+    .memory-card .memory-number {
+      display: block;
+      margin-bottom: 17px;
+      color: #bc7c80;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .17em;
+    }
+    .memory-card h3 { margin: 0 0 8px; color: #76455b; font-size: 18px; }
+    .memory-card p, .thank-you-note p {
+      margin: 0;
+      color: #816f79;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .memory-more { margin-top: 20px; text-align: center; }
+    .thank-you-note {
+      max-width: 570px;
+      margin: 18px auto 0;
+      padding: 22px;
+      border: 1px solid #efdadd;
+      border-radius: 15px;
+      background: #fff8f4;
+      animation: appear .35s ease both;
+    }
+    .thank-you-note h3 {
+      margin: 0 0 13px;
+      color: #8d5268;
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: 500;
+      text-align: center;
+    }
+    .thank-you-note p + p { margin-top: 10px; }
+    .thank-you-note .signature { margin-top: 15px; color: #a45b71; text-align: right; }
+    .song-panel { text-align: center; }
+    .song-panel h3 {
+      margin: 0 0 6px;
+      color: #56374c;
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: 500;
+    }
+    .song-panel > p {
+      margin: 0 0 17px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+    .spotify-player { overflow: hidden; border-radius: 13px; background: #eee8e2; }
+    .spotify-player iframe { display: block; width: 100%; height: 152px; border: 0; }
+    .spotify-link {
+      display: inline-block;
+      margin-top: 13px;
+      color: #775466;
+      font-size: 11px;
+      font-weight: 700;
+      text-underline-offset: 4px;
+    }
+    .footer {
+      margin-top: 56px;
+      color: #a08d92;
+      font-family: Georgia, serif;
+      font-size: 13px;
+      font-style: italic;
+      text-align: center;
+    }
+    .footer span { color: var(--rose); }
+    .decoration {
+      position: fixed;
+      z-index: -1;
+      color: #d3a18a55;
+      pointer-events: none;
+      user-select: none;
+    }
+    .decoration-one { top: 19%; left: 7%; font-size: 26px; }
+    .decoration-two { top: 27%; right: 8%; font-size: 19px; }
+    .decoration-three { right: 14%; bottom: 13%; font-size: 30px; }
+    @keyframes flicker {
+      from { transform: rotate(-5deg) scale(.93); }
+      to { transform: rotate(5deg) scale(1.06); }
+    }
+    @keyframes twinkle {
+      50% { transform: scale(.7) rotate(18deg); opacity: .5; }
+    }
+    @keyframes appear {
+      from { transform: translateY(12px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @media (max-width: 600px) {
+      .page { width: min(100% - 30px, 1060px); padding-top: 20px; }
+      .scene { margin-top: 60px; }
+      .cake-button { margin-top: 27px; }
+      .cake-art { transform: scale(.92); }
+      .envelope-stage { margin-top: 45px; }
+      .envelope { height: 236px; }
+      .letter { min-height: 184px; padding: 17px 16px; }
+      .letter p { font-size: 12px; }
+      .story { margin-top: 55px; padding: 22px 16px; }
+      .memory-list { grid-template-columns: 1fr; }
+      .memory-card { min-height: auto; }
+      .memory-card .memory-number { margin-bottom: 10px; }
+      .decoration-one { left: 3%; }
+      .decoration-two { right: 3%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <span class="decoration decoration-one" aria-hidden="true">✦</span>
+  <span class="decoration decoration-two" aria-hidden="true">✧</span>
+  <span class="decoration decoration-three" aria-hidden="true">♡</span>
+
+  <main class="page">
+    <header class="topline">
+      <span class="brand">untukmu<span>✳</span></span>
+      <span>dibuat dengan banyak cinta</span>
+    </header>
+
+    <section class="scene" id="cakeStage" aria-labelledby="birthdayTitle">
+      <p class="eyebrow">hari ini punya kamu</p>
+      <h1 id="birthdayTitle">Selamat ulang tahun,<br><em>Ade.</em></h1>
+      <p class="intro-copy">Ada satu kejutan kecil menunggumu. Sentuh kuenya untuk membuka hadiah pertama. ♡</p>
+      <button class="cake-button" id="cakeButton" type="button" aria-label="Sentuh kue ulang tahun untuk membuka kejutan">
+        <span class="cake-art" aria-hidden="true">
+          <span class="cake-sparkle sparkle-left">✦</span>
+          <span class="cake-sparkle sparkle-right">✧</span>
+          <span class="cake">
+            <span class="candle"><span class="flame"></span></span>
+            <span class="cake-top">
+              <span class="drip drip-one"></span><span class="drip drip-two"></span><span class="drip drip-three"></span>
+              <span class="berry berry-one"></span><span class="berry berry-two"></span><span class="berry berry-three"></span>
+            </span>
+            <span class="cake-bottom"></span>
+            <span class="cake-plate"></span>
+          </span>
+        </span>
+        <span class="cake-prompt">sentuh kuenya untuk kejutan ↓</span>
+      </button>
+    </section>
+
+    <section class="envelope-stage" id="envelopeStage" aria-labelledby="envelopeTitle" hidden>
+      <p class="eyebrow">kejutan kecil untukmu</p>
+      <h2 id="envelopeTitle">Ada surat untuk <em>Ade.</em></h2>
+      <p>Tekan amplopnya dan baca pesanku, ya.</p>
+      <div
+        class="envelope"
+        id="envelope"
+        role="button"
+        tabindex="0"
+        aria-label="Buka amplop ucapan"
+        aria-expanded="false"
+      >
+        <div class="envelope-body" aria-hidden="true"></div>
+        <div class="envelope-flap" aria-hidden="true"></div>
+        <div class="letter">
+          <p><strong>Untuk Ade tersayang,</strong></p>
+          <p>Semoga hari ini dipenuhi hal-hal kecil yang bikin Ade tersenyum. Semoga semua doa dan mimpi baikmu menemukan jalannya.</p>
+          <p>Terima kasih sudah menjadi bagian paling hangat di hari-hari Mas. Selamat ulang tahun, Ade. Mas sayang Ade. 💌</p>
+        </div>
+      </div>
+      <p class="envelope-hint" id="envelopeHint">sentuh amplop untuk membukanya</p>
+      <button class="action-button" id="continueButton" type="button" hidden>Lanjutkan melihat kenangan ✨</button>
+    </section>
+
+    <section class="story" id="storySection" aria-labelledby="storyTitle" hidden>
+      <div class="story-heading">
+        <p class="eyebrow">cerita kecil kita</p>
+        <h2 id="storyTitle">Hal-hal yang <em>berarti.</em></h2>
+      </div>
+      <nav class="story-nav" aria-label="Menu kenangan dan lirik">
+        <button class="tab active" type="button" data-target="memories" aria-selected="true">Kenangan</button>
+        <button class="tab" type="button" data-target="lyrics" aria-selected="false">Lirik ♫</button>
+      </nav>
+
+      <section class="panel active" id="memories" aria-label="Kenangan">
+        <div class="memory-list">
+          <article class="memory-card">
+            <span class="memory-number">01 / AWAL CERITA</span>
+            <h3>Hari pertama kita ketemu</h3>
+            <p>Yang bikin hati berdebar bukan cuma senyumnya, tapi rasa tenang yang tiba-tiba ikut hadir.</p>
+          </article>
+          <article class="memory-card">
+            <span class="memory-number">02 / OBROLAN KITA</span>
+            <h3>Waktu ngobrol tanpa henti</h3>
+            <p>Dari hal kecil sampai hal besar, tiap percakapan terasa seperti ruang nyaman yang ingin diulang.</p>
+          </article>
+          <article class="memory-card">
+            <span class="memory-number">03 / SELALU ADA</span>
+            <h3>Saat kamu hadir di momen sulit</h3>
+            <p>Beban terasa lebih ringan karena ada yang mau mendengarkan dan tetap ada di sisi.</p>
+          </article>
+          <article class="memory-card">
+            <span class="memory-number">04 / HARI INI DAN NANTI</span>
+            <h3>Semua yang kita tunggu</h3>
+            <p>Kamu bukan cuma bagian dari hari biasa, tapi salah satu alasan hari-hari terasa indah untuk dinanti.</p>
+          </article>
+        </div>
+        <div class="memory-more">
+          <button class="action-button" id="thanksButton" type="button" aria-expanded="false" aria-controls="thankYouNote">Lanjutan 💌</button>
+          <article class="thank-you-note" id="thankYouNote" hidden>
+            <h3>Terima kasih sudah selalu ada 🤍</h3>
+            <p>Ade, makasih ya sudah menemani Mas setiap hari. Kehadiran Ade bikin hari-hari Mas terasa lebih berarti.</p>
+            <p>Setiap kali kita menghadapi masalah, selalu ada jalan untuk melewatinya. Setelah semua itu, kita justru bisa jadi semakin dekat dan menemukan cara untuk baikan lagi.</p>
+            <p>Dari setiap perbedaan, kita belajar memahami satu sama lain dan menjaga hubungan ini dengan lebih baik. Buat Mas, ini bukti betapa Mas sayang sama Ade.</p>
+            <p class="signature">Sayang selalu,<br>Mas ✨</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel song-panel" id="lyrics" aria-label="Lirik lagu">
+        <h3>Surat Cinta Untuk Starla</h3>
+        <p>Virgoun · Satu lagu untuk menemani hari spesialmu.<br>Lirik lengkap tersedia melalui Spotify jika ditampilkan untuk lagu dan akunmu.</p>
+        <div class="spotify-player" id="spotifyPlayer">
+          <iframe
+            title="Pemutar Spotify — Surat Cinta Untuk Starla oleh Virgoun"
+            src="about:blank"
+            data-src="https://open.spotify.com/embed/track/5O7ntE2kTEiUsbXJAb29uU?utm_source=generator&amp;autoplay=1"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          ></iframe>
+        </div>
+        <a class="spotify-link" href="https://open.spotify.com/track/5O7ntE2kTEiUsbXJAb29uU?si=a01c0c666f2b4ba3" target="_blank" rel="noopener noreferrer">Buka lagu dan lirik di Spotify ↗</a>
+        <p style="margin-top: 12px">Jika musik belum mulai otomatis, tekan tombol Play pada pemutar Spotify.</p>
+      </section>
+    </section>
+
+    <footer class="footer">dibuat khusus untuk <span>hari spesialmu</span> ♡</footer>
+  </main>
+
+  <script>
+    const cakeButton = document.querySelector("#cakeButton");
+    const cakeStage = document.querySelector("#cakeStage");
+    const envelopeStage = document.querySelector("#envelopeStage");
+    const envelope = document.querySelector("#envelope");
+    const envelopeHint = document.querySelector("#envelopeHint");
+    const continueButton = document.querySelector("#continueButton");
+    const storySection = document.querySelector("#storySection");
+    const thanksButton = document.querySelector("#thanksButton");
+    const thankYouNote = document.querySelector("#thankYouNote");
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".panel");
+    const spotifyFrame = document.querySelector("#spotifyPlayer iframe");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    cakeButton.addEventListener("click", () => {
+      cakeStage.hidden = true;
+      envelopeStage.hidden = false;
+      envelopeStage.scrollIntoView({
+        behavior: reducedMotion.matches ? "auto" : "smooth",
+        block: "center"
+      });
+      envelope.focus({ preventScroll: true });
+    });
+
+    function toggleEnvelope() {
+      const isOpen = envelope.classList.toggle("open");
+      envelope.setAttribute("aria-expanded", String(isOpen));
+      envelope.setAttribute("aria-label", isOpen ? "Tutup amplop ucapan" : "Buka amplop ucapan");
+      envelopeHint.textContent = isOpen ? "surat kecil dari Mas untuk Ade ♡" : "sentuh amplop untuk membukanya";
+      continueButton.hidden = !isOpen;
+    }
+
+    envelope.addEventListener("click", toggleEnvelope);
+    envelope.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleEnvelope();
+      }
+    });
+
+    continueButton.addEventListener("click", () => {
+      storySection.hidden = false;
+      if (spotifyFrame.src === "about:blank") {
+        spotifyFrame.src = spotifyFrame.dataset.src;
+      }
+      storySection.scrollIntoView({
+        behavior: reducedMotion.matches ? "auto" : "smooth",
+        block: "start"
+      });
+    });
+
+    thanksButton.addEventListener("click", () => {
+      const isExpanded = thanksButton.getAttribute("aria-expanded") === "true";
+      thanksButton.setAttribute("aria-expanded", String(!isExpanded));
+      thanksButton.textContent = isExpanded ? "Lanjutan 💌" : "Tutup pesan 💌";
+      thankYouNote.hidden = isExpanded;
+    });
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const target = tab.dataset.target;
+        tabs.forEach(item => {
+          const isActive = item === tab;
+          item.classList.toggle("active", isActive);
+          item.setAttribute("aria-selected", String(isActive));
+        });
+        panels.forEach(panel => panel.classList.toggle("active", panel.id === target));
+      });
+    });
+  </script>
+</body>
+</html>
